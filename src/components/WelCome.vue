@@ -24,7 +24,7 @@
           <tr>
             <th width="15%">Skill</th>
             <td width="5%">:</td>
-            <td width="80%">Php Expert</td>
+            <td width="80%">Php Expert,Laravel</td>
           </tr>
         </table>
 

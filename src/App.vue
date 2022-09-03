@@ -2,6 +2,8 @@
   <HelloWorld msg="Welcome To My Vue Js Site"></HelloWorld>
   <Welcome />
   <Welcome />
+  <Welcome />
+  <Welcome />
 </template>
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
