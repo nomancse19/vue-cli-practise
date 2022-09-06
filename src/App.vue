@@ -1,26 +1,54 @@
 <template>
   <HelloWorld msg="Welcome To My Vue Js Site"></HelloWorld>
-  <CustomComponent
-    age="27"
-    name="Jahidul Islam Noman"
-    department="CSE"
-    skill="PHP, Laravel,Zend Certified"
-  ></CustomComponent>
-  <CustomComponent
-    age="25"
-    name="Test Purpose Name"
-    department="Non CSE"
-    skill="No Skills Available"
-  ></CustomComponent>
+  <PropsValidation
+    v-for="contacts in ContactDetails"
+    :key="contacts.name"
+    :name="contacts.name"
+    :skill="contacts.skill"
+    :department="contacts.department"
+    :age="contacts.age"
+  ></PropsValidation>
+
+  <ComponentSlot
+    v-for="contacts in ContactDetails"
+    :key="contacts.name"
+    :name="contacts.name"
+    :skill="contacts.skill"
+    :department="contacts.department"
+    :age="contacts.age"
+  >
+    <span style="color: red">Hello I AM Inside From Component Slot.... </span>
+  </ComponentSlot>
 </template>
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import CustomComponent from "./components/CustomComponent.vue";
+import PropsValidation from "./components/PropsValidation.vue";
+import ComponentSlot from "./components/ComponentSlot.vue";
 export default {
   name: "App",
+
+  data() {
+    return {
+      ContactDetails: [
+        {
+          name: "Jahidul Islam Noman",
+          age: 25,
+          department: "CSE",
+          skill: "Laravel, PHP, Jquery",
+        },
+        {
+          name: "Jahid Khan",
+          age: 15,
+          department: "Class Ten",
+          skill: "Asp.net, C#",
+        },
+      ],
+    };
+  },
   components: {
     HelloWorld,
-    CustomComponent,
+    PropsValidation,
+    ComponentSlot,
   },
 };
 </script>
