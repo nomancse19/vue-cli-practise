@@ -1,23 +1,32 @@
 <template>
   <div class="the-card">
-    <div class="the-card__title">Demo Title</div>
-    <div class="the-card__body">Body Text</div>
+    <div class="the-card__title">{{ demo_title }}</div>
+    <div class="the-card__body"><slot></slot></div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    demo_title: {
+      type: String,
+    },
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
-<style>
+<style scoped>
 .the-card {
-  width: 200px;
+  width: 300px;
   min-height: 200px;
   border: 1px solid black;
-  margin: 5px auto;
+  margin: 20px auto;
 }
 .the-card__title {
-  background: green;
+  background: rgb(2, 96, 2);
   padding: 5px 11px;
   color: #fff;
 }
