@@ -1,7 +1,8 @@
 <template>
   <div class="the-card">
     <div class="the-card__title">{{ demo_title }}</div>
-    <div class="the-card__body"><slot></slot></div>
+    <div class="the-card__body"><slot name="body"></slot></div>
+    <div class="the-card__footer"><slot name="footer"></slot></div>
   </div>
 </template>
 
@@ -35,5 +36,12 @@ export default {
 }
 .the-card__body img {
   height: 111px;
+}
+.the-card__footer {
+  background: rgba(192, 191, 191, 0.485);
+  text-align: center;
+  padding: 10px 10px;
+  font-weight: bold;
+  color: crimson;
 }
 </style>
