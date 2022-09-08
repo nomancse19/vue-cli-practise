@@ -2,7 +2,9 @@
   <div class="the-card">
     <div class="the-card__title">{{ demo_title }}</div>
     <div class="the-card__body"><slot name="body"></slot></div>
-    <div class="the-card__footer"><slot name="footer"></slot></div>
+    <div class="the-card__footer" v-if="$slots.footer">
+      <slot name="footer"></slot>
+    </div>
   </div>
 </template>
 
@@ -34,9 +36,7 @@ export default {
 .the-card__body {
   padding: 11px;
 }
-.the-card__body img {
-  height: 111px;
-}
+
 .the-card__footer {
   background: rgba(192, 191, 191, 0.485);
   text-align: center;

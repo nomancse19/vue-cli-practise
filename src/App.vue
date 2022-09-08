@@ -1,18 +1,16 @@
 <template>
-  <HelloWorld msg="Welcome To My Vue Js Site"></HelloWorld>
+  <HelloWorld msg="Welcome To My Vue Js Site" class="hello"></HelloWorld>
 
   <TheCard demo_title="About Me">
-    <template v-slot:body>
+    <template #body>
       <p>
         Hello I Am Jahidul Islam Noman. I AM PHP Zend Certified Software
         Engineer. I am Now Learn Vue JS on Javascript Framwork...
       </p>
     </template>
-
-    <template v-slot:footer> Copyright @Noman </template>
   </TheCard>
   <the-card demo_title="Apple iPhone 13">
-    <template v-slot:body>
+    <template #body>
       <img
         src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg"
         alt=""
@@ -23,13 +21,13 @@
         Resolution 1170 x 2532 pixels, 19.5:9 ratio (~460 ppi density)
       </p>
     </template>
-    <template v-slot:footer>
+    <template #footer>
       <button>Add To Cart</button>
       <button>Buy Now</button>
     </template>
   </the-card>
   <the-card demo_title="Samsung Galaxy Tab Active4 Pro">
-    <template v-slot:body>
+    <template #body>
       <img
         src="https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a13-a137.jpg"
         alt=""
@@ -39,7 +37,7 @@
         ratio) Resolution 1920 x 1200 pixels, 16:10 ratio (~224 ppi density)
       </p>
     </template>
-    <template v-slot:footer>
+    <template #footer>
       <button>Add To Cart</button>
       <button>Buy Now</button>
     </template>
@@ -66,13 +64,18 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
+.hello {
+  text-align: center;
+}
 button {
-  padding: 10px 10px;
+  padding: 5px 5px;
   margin: 5px;
   cursor: pointer;
+}
+.the-card__body img {
+  height: 110px;
 }
 </style>
