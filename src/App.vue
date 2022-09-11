@@ -1,5 +1,6 @@
 <template>
   <HelloWorld msg="Welcome To My Vue Js Site" class="hello"></HelloWorld>
+  <ApiPostData></ApiPostData>
   <product-card
     v-for="product in products"
     :key="product.name"
@@ -11,6 +12,7 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import ProductCard from "./components/ProductCard.vue";
+import ApiPostData from "./components/ApiPostData.vue";
 export default {
   name: "App",
 
@@ -48,6 +50,7 @@ export default {
   components: {
     HelloWorld,
     ProductCard,
+    ApiPostData,
   },
 };
 </script>
