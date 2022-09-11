@@ -1,18 +1,17 @@
 <template>
   <HelloWorld msg="Welcome To My Vue Js Site" class="hello"></HelloWorld>
-  <ApiPostData></ApiPostData>
   <product-card
     v-for="product in products"
     :key="product.name"
     :prop_product="product"
     @buy-now-click="clickBuy($event)"
     @add-to-cart="addtocart()"
+    @toggle-favourite="handleToggleFavoutite($event)"
   ></product-card>
 </template>
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import ProductCard from "./components/ProductCard.vue";
-import ApiPostData from "./components/ApiPostData.vue";
 export default {
   name: "App",
 
@@ -24,17 +23,20 @@ export default {
           thumbnail:
             "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg",
           price: 99850,
+          addedToFavourite: true,
         },
         {
           name: "Xiaomi Redmi 11T Pro",
           thumbnail:
             "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-11t-pro.jpg",
           price: 55800,
+          addedToFavourite: false,
         },
         {
           name: "Xiaomi Redmi 10 Prime 2022",
           thumbnail: "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-10-.jpg",
           price: 32500,
+          addedToFavourite: false,
         },
       ],
     };
@@ -46,11 +48,13 @@ export default {
     addtocart() {
       console.log("Add To Cart...");
     },
+    handleToggleFavoutite(product) {
+      product.addedToFavourite = !product.addedToFavourite;
+    },
   },
   components: {
     HelloWorld,
     ProductCard,
-    ApiPostData,
   },
 };
 </script>

@@ -1,6 +1,24 @@
 <template>
   <div class="the-product">
-    <div class="the-product__title">{{ prop_product.name }}</div>
+    <div class="the-product__title">
+      <div>{{ prop_product.name }}</div>
+      <img
+        src="../img/star.png"
+        v-if="prop_product.addedToFavourite"
+        width="25"
+        height="25"
+        alt="Favour"
+        @click="toggleFavourite"
+      />
+      <img
+        src="../img/unstar.png"
+        v-else
+        @click="toggleFavourite"
+        width="25"
+        height="25"
+        alt="Favour"
+      />
+    </div>
     <div class="the-product__body">
       <img :src="prop_product.thumbnail" alt="" />
       <p>৳{{ prop_product.price }}</p>
@@ -30,6 +48,9 @@ export default {
     handleAddToCartClick() {
       this.$emit("add-to-cart", this.prop_product);
     },
+    toggleFavourite() {
+      this.$emit("toggle-favourite", this.prop_product);
+    },
   },
 };
 </script>
@@ -45,6 +66,9 @@ export default {
   background: rgb(2, 96, 2);
   padding: 5px 11px;
   color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .the-product__body {
   padding: 11px;
